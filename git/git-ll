@@ -1,0 +1,15 @@
+#! /usr/bin/env bash
+
+# git-ll
+
+lines="$(( $(tput lines) - 20 ))"
+
+echo "Last $lines commits"
+
+git log \
+  --graph \
+ --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
+ --abbrev-commit \
+ --date=relative -"$lines"
+
+echo
