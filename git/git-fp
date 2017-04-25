@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+# git-fp - Fetch all branches before doing a pull
+
 echo "Running: fetch --all --prune"
 git fetch --all --prune || { >&2 echo "Failed to fetch!"; exit 1; }
 

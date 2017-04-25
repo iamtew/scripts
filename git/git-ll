@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-# git-ll
+# git-ll - Attempt to fill the whole terminal screen with the git log
 
 lines="$(( $(tput lines) - 20 ))"
 
@@ -8,8 +8,8 @@ echo "Last $lines commits"
 
 git log \
   --graph \
- --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
- --abbrev-commit \
- --date=relative -"$lines"
+  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
+  --abbrev-commit \
+  --date=relative -"$lines"
 
 echo
